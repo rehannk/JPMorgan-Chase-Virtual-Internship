@@ -1,0 +1,36 @@
+From da536e1b297c06065324222f3d35bab66dfd220c Mon Sep 17 00:00:00 2001
+From: Mohammed Rehan Khan <kmohammedrehan@gmail.com>
+Date: Fri, 5 Jun 2020 20:25:18 +0530
+Subject: [PATCH] Create Patch File
+
+---
+ datafeed/server3.py | 3 ++-
+ datafeed/test.csv   | 0
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+ create mode 100644 datafeed/test.csv
+
+diff --git a/datafeed/server3.py b/datafeed/server3.py
+index 2de4e28..2fa88ff 100644
+--- a/datafeed/server3.py
++++ b/datafeed/server3.py
+@@ -242,6 +242,7 @@ class App(object):
+         self._data_2    = order_book(read_csv(), self._book_2, 'DEF')
+         self._rt_start = datetime.now()
+         self._sim_start, _, _  = next(self._data_1)
++        #self._sim_start, _, _  = next(self.sim_start)
+         self.read_10_first_lines()
+ 
+     @property
+@@ -317,4 +318,4 @@ if __name__ == '__main__':
+     if not os.path.isfile('test.csv'):
+         print ("No data found, generating...")
+         generate_csv()
+-    run(App())
++    run(App())
+\ No newline at end of file
+diff --git a/datafeed/test.csv b/datafeed/test.csv
+new file mode 100644
+index 0000000..e69de29
+-- 
+2.25.1.windows.1
+
